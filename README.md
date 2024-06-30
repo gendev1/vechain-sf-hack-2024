@@ -1,27 +1,53 @@
-# X-App Template for VeBetterDAO 🚀
 
-                                     #######
-                                ################
-                              ####################
-                            ###########   #########
-                           #########      #########
-         #######          #########       #########
-         #########       #########      ##########
-          ##########     ########     ####################
-           ##########   #########  #########################
-             ################### ############################
-              #################  ##########          ########
-                ##############      ###              ########
-                 ############                       #########
-                   ##########                     ##########
-                    ########                    ###########
-                      ###                    ############
-                                         ##############
-                                   #################
-                                  ##############
-                                  #########
+Copy code
+# Athentor
 
-Unlock the potential of decentralized application development on Vechain with our X-App template for VeBetterDAO. Designed for the Vechain Thor blockchain, this template integrates cutting-edge technologies such as React, TypeScript, Hardhat, and Express, ensuring a seamless and efficient DApp development experience. 🌟
+## 🚀 Problem Statement
+
+Build a decentralized application (dApp) that tokenizes and gamifies Charles Oliveira’s young fighters training program. The dApp should have the following goals:
+
+1. **Learn-2-Earn:** Fighters should be incentivized with B3TR tokens for taking their education seriously.
+2. **Mentor-2-Earn:** Mentors and supporters should be incentivized with B3TR tokens for supporting fighters, earning a percentage of the fighters’ winnings in return.
+
+## 🌟 Project Overview
+
+**Athentor** is a platform designed to incentivize young athletes to adhere to their training regimes and provide them access to world-class professional mentors. Athletes are rewarded with tokens when they stick to their training regimen, and mentors are compensated for one-on-one calls with athletes.
+
+### Key Features
+
+- 🏅 **Incentivization for Athletes:** Athletes earn tokens for sticking to their training regime.
+- 👩‍🏫 **Professional Mentorship:** Mentors are paid for one-on-one calls with athletes.
+- 💸 **Gas-Free Transactions:** Smart contract calls are delegated to the backend to avoid gas fees for users.
+- 🤖 **AI Chatbot:** Athletes have access to a ChatGPT-powered AI chatbot for assistance with nutrition and training.
+
+### 🛠 Tech Stack
+
+- **Turbo Repo:** For managing the monorepo.
+- **VeChain:** Blockchain platform for tokenization.
+- **Express:** Backend framework.
+- **TypeScript:** Programming language for type safety.
+- **shadcn:** Component library for building the user interface.
+- **Tailwind CSS:** Utility-first CSS framework for styling.
+
+## 🔮 Future Enhancements
+
+- 🔄 **Pull Method for Token Transfers:** Implement a pull method instead of the current push method for token transfers.
+- 🔍 **Security Audits:** Conduct thorough security audits to ensure the safety and reliability of the platform.
+- 💰 **Tokenize Future Earnings:** Develop a mechanism to tokenize the future earnings of athletes after the completion of their training.
+
+## 🚧 Problems Faced
+
+### 🐞 Inspector Issues
+- **Problem:** The inspector does not work when the tokens are deployed to the testnet.
+- **Workaround:** A script has been written to initialize the dApp cycle to circumvent this issue.
+
+### 🔌 Proxy Issues for Remix
+- **Problem:** The proxy for Remix has been an issue, preventing us from connecting properly.
+- **Workaround:** We are currently seeking alternative solutions to establish a stable connection.
+
+### ⚙️ Thor Dev Kit
+- **Problem:** The Thor Dev Kit did not function properly in the backend.
+- **Workaround:** We utilized `ThorClient` to call the functions, ensuring that our backend operations could continue seamlessly.
 
 ## Requirements
 
@@ -118,10 +144,3 @@ Open the `Inspector` tab and perform the following transactions:
 - **Trigger cycle:** Trigger the cycle for the EcoEarn contract
 ![image](https://github.com/vechain/x-app-template/assets/64158778/00236dcd-5b64-4493-9acd-55c6a7f0981f)
 
-## Disclaimer ⚠️
-
-This template serves as a foundational starting point and should be thoroughly reviewed and customized to suit your project’s specific requirements. Pay special attention to configurations, security settings, and environment variables to ensure a secure and efficient deployment.
-
----
-
-Embrace the power of VeBetterDAO's X-Apps template and transform your DApp development experience. Happy coding! 😄

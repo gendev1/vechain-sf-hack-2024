@@ -96,6 +96,25 @@ export const EcoEarnABI = [
     inputs: [
       {
         indexed: true,
+        internalType: 'address',
+        name: 'mentor',
+        type: 'address',
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'trainee',
+        type: 'address',
+      },
+    ],
+    name: 'MentorshipStarted',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
         internalType: 'bytes32',
         name: 'role',
         type: 'bytes32',
@@ -357,6 +376,25 @@ export const EcoEarnABI = [
     type: 'function',
   },
   {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    name: 'mentors',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
     inputs: [],
     name: 'nextCycle',
     outputs: [
@@ -503,6 +541,24 @@ export const EcoEarnABI = [
   {
     inputs: [
       {
+        internalType: 'address',
+        name: '_mentor',
+        type: 'address',
+      },
+      {
+        internalType: 'address',
+        name: '_trainee',
+        type: 'address',
+      },
+    ],
+    name: 'startMentorship',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
         internalType: 'uint256',
         name: '',
         type: 'uint256',
@@ -570,6 +626,30 @@ export const EcoEarnABI = [
         internalType: 'uint256',
         name: '',
         type: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    name: 'trainees',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
     stateMutability: 'view',

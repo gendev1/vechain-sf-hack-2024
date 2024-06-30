@@ -1,5 +1,5 @@
 export interface ReceiptData {
-    image: string;
+    image?: string;
     address: string;
     captcha: string;
     deviceID: string;

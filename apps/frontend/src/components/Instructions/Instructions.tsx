@@ -4,18 +4,18 @@ import { Step } from "./Step";
 const Steps = [
   {
     icon: "/steps/1.svg",
-    title: "Purchase eco-friendly products",
-    description: "Buy products that are eco-friendly and sustainable.",
+    title: "Select a mentor",
+    description: "Once you select a mentor, you can schedule a session.",
   },
   {
     icon: "/steps/2.svg",
-    title: "Upload the receipt",
-    description: "Upload your receipt and AI will verify the products.",
+    title: "Follow the advice",
+    description: "After the session, you are given training program",
   },
   {
     icon: "/steps/3.svg",
     title: "Earn rewards",
-    description: "Earn B3TR for purchasing eco-friendly products.",
+    description: "Earn B3TR for everyday by sticking to the training.",
   },
 ];
 

@@ -2,6 +2,7 @@ import { Box, Container, HStack, Image } from "@chakra-ui/react";
 import { ConnectWalletButton } from "./ConnectWalletButton";
 export const Navbar = () => {
   return (
+
     <Box
       px={0}
       position={"sticky"}
@@ -11,6 +12,7 @@ export const Navbar = () => {
       h={"auto"}
       w={"full"}
       bg={"#f7f7f7"}
+      
     >
       <Container
         w="full"
@@ -18,6 +20,7 @@ export const Navbar = () => {
         flexDirection="row"
         justifyContent="space-between"
         alignItems={"center"}
+        className="px-8 py-2"
         maxW={"container.xl"}
       >
         <HStack flex={1} justifyContent={"start"}>
@@ -25,6 +28,7 @@ export const Navbar = () => {
         </HStack>
 
         <HStack flex={1} spacing={4} justifyContent={"end"}>
+       
           <ConnectWalletButton />
         </HStack>
       </Container>

@@ -1,28 +1,4 @@
 // SPDX-License-Identifier: MIT
-
-//                                      #######
-//                                 ################
-//                               ####################
-//                             ###########   #########
-//                            #########      #########
-//          #######          #########       #########
-//          #########       #########      ##########
-//           ##########     ########     ####################
-//            ##########   #########  #########################
-//              ################### ############################
-//               #################  ##########          ########
-//                 ##############      ###              ########
-//                  ############                       #########
-//                    ##########                     ##########
-//                     ########                    ###########
-//                       ###                    ############
-//                                          ##############
-//                                    #################
-//                                   ##############
-//                                   #########
-
-// This contract is provided as a template for VeBetterDAO and should not be used as the definitive version. Ensure proper review and testing before deployment.
-
 pragma solidity ^0.8.19;
 
 import '@openzeppelin/contracts/access/AccessControl.sol';
@@ -58,11 +34,18 @@ contract EcoEarn is AccessControl {
     // Next cycle number
     uint256 public nextCycle;
 
+    // Mapping from trainee to mentor
+    mapping(address => address) public mentors;
+
+    // Mapping from mentor to trainees
+    mapping(address => address[]) public trainees;
+
     // Events
     event CycleStarted(uint256 cycleStartBlock);
     event CycleDurationUpdated(uint256 newDuration);
     event Submission(address indexed participant, uint256 amount);
     event ClaimedAllocation(uint256 indexed cycle, uint256 amount);
+    event MentorshipStarted(address indexed mentor, address indexed trainee);
 
     /**
      * @dev Constructor for the EcoEarn contract
@@ -135,6 +118,20 @@ contract EcoEarn is AccessControl {
         rewardsLeft[cycle] = 0;
         require(token.transfer(msg.sender, amount));
     }
+
+    /**
+     * @dev Function to start a mentorship
+     * @param _mentor Address of the mentor
+     * @param _trainee Address of the trainee
+     */
+    function startMentorship(address _mentor, address _trainee) external {
+        require(msg.sender == _trainee, 'Only the trainee can start a mentorship');
+        require(mentors[_trainee] == address(0), 'Trainee is already mentored');
+        mentors[_trainee] = _mentor;
+        trainees[_mentor].push(_trainee);
+        emit MentorshipStarted(_mentor, _trainee);
+    }
+    
 
     // ---------------- SETTERS ---------------- //
 

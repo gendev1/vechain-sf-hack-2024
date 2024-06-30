@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { Routes } from '@interfaces/routes.interface';
 import { SubmissionController } from '@/controllers/submission.controller';
-import { ValidationMiddleware } from '@/middlewares/validation.middleware';
-import { SubmitDto } from '@/dtos/submission.dto';
+// import { ValidationMiddleware } from '@/middlewares/validation.middleware';
+// import { SubmitDto } from '@/dtos/submission.dto';
 
 export class SubmissionRoute implements Routes {
   public router = Router();
@@ -13,6 +13,6 @@ export class SubmissionRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.post(`/submitReceipt`, ValidationMiddleware(SubmitDto), this.submission.submitReceipt);
+    this.router.post(`/submit-progress`, this.submission.submitReceipt);
   }
 }

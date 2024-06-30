@@ -14,7 +14,7 @@ export const submitReceipt = async (
 ): Promise<Response> => {
   try {
     const response = await axios.post(
-      `${backendURL}/submitReceipt`, 
+      `${backendURL}/submit-progress`, 
       data
     );
 
